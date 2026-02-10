@@ -10,12 +10,11 @@ pipeline {
             }
             steps {
                 sh '''
-                ls -a
+                ls -la
                 node --version
                 npm --version
                 npm ci
                 npm run build
-                ls -a
                 '''
             }
         }
@@ -23,7 +22,8 @@ pipeline {
             steps {
                 sh '''
                 echo 'Test Stage'
-                ls -a
+                ls -la
+                npm test
                 '''
             }
         }
