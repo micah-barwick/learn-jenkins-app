@@ -58,6 +58,7 @@ pipeline {
             junit '**/junit.xml', 
             allowEmptyResults: true,
             publishHTML([
+                allowMissing: false, 
                 alwaysLinkToLastBuild: false, 
                 icon: '', 
                 keepAll: false, 
@@ -66,7 +67,6 @@ pipeline {
                 reportName: 'Playwright HTML Report', 
                 reportTitles: '', 
                 useWrapperFileDirectly: true])
-                allowMissing: false, 
         }
     }
 }
