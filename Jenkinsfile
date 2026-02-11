@@ -25,7 +25,8 @@ pipeline {
                     reuseNode true
                     image 'node:18-alpine' 
                 }
-            }steps {
+            }
+            steps {
                 sh '''
                 echo 'Test Stage'
                 ls -la
