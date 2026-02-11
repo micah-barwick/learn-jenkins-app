@@ -39,7 +39,7 @@ pipeline {
             agent{
                 docker{
                     reuseNode true
-                    image 'mcr.microsoft.com/playwright:v1.58.2-noble' 
+                    image 'mcr.microsoft.com/playwright:v1.39.0-noble' 
                 }
             }
             steps {
@@ -55,7 +55,7 @@ pipeline {
     }
     post{
         always{
-            junit 'test-results/junit.xml'
+            junit 'jest-results/junit.xml'
         }
     }
 }
