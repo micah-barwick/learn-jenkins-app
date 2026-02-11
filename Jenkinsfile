@@ -20,7 +20,12 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
+            agent{
+                docker{
+                    reuseNode true
+                    image 'node:18-alpine' 
+                }
+            }steps {
                 sh '''
                 echo 'Test Stage'
                 ls -la
