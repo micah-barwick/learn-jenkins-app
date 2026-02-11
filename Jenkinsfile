@@ -55,8 +55,7 @@ pipeline {
     }
     post{
         always{
-            junit '**/junit.xml', 
-            allowEmptyResults: true,
+            junit testResults: '**/junit.xml', allowEmptyResults: true
             publishHTML([
                 allowMissing: false, 
                 alwaysLinkToLastBuild: false, 
@@ -66,7 +65,8 @@ pipeline {
                 reportFiles: 'index.html', 
                 reportName: 'Playwright HTML Report', 
                 reportTitles: '', 
-                useWrapperFileDirectly: true])
+                useWrapperFileDirectly: true
+                ])
         }
     }
 }
